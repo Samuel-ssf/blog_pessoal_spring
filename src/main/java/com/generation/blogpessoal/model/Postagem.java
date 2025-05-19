@@ -19,8 +19,7 @@ public class Postagem {
 
 	@Id // Primary key
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // UTO_INCREMENT
-	
-	private long id;
+	private Long id;
 	
 	@Column(length = 100)
 	@NotBlank(message = "O atributo titulo é obrigatório!")
@@ -29,17 +28,17 @@ public class Postagem {
 	
 	@Column(length = 1000)
 	@NotBlank(message = "O atributo texto é obrigatório!")
-	@Size(min = 10, max = 100, message = "O atributo texto deve ter no minimo 10 e no maxímo 100 caracteres.")	
+	@Size(min = 10, max = 1000, message = "O atributo texto deve ter no minimo 10 e no maxímo 100 caracteres.")	
 	private String texto;
 	
 	@UpdateTimestamp
 	private LocalDateTime data;
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
