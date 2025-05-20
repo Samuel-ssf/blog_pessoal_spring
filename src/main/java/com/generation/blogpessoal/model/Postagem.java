@@ -22,13 +22,13 @@ public class Postagem {
 	private Long id;
 	
 	@Column(length = 100)
-	@NotBlank(message = "O atributo titulo é obrigatório!")
-	@Size(min = 5, max = 100, message = "O atributo titulo deve ter no minimo 5 e no maxímo 100 caracteres.")
+	@NotBlank(message = "O atributo titulo Ã© obrigatÃ³rio!")
+	@Size(min = 5, max = 100, message = "O atributo titulo deve ter no minimo 5 e no maxÃ­mo 100 caracteres.")
 	private String titulo;
 	
 	@Column(length = 1000)
-	@NotBlank(message = "O atributo texto é obrigatório!")
-	@Size(min = 10, max = 1000, message = "O atributo texto deve ter no minimo 10 e no maxímo 100 caracteres.")	
+	@NotBlank(message = "O atributo texto Ã© obrigatÃ³rio!")
+	@Size(min = 10, max = 1000, message = "O atributo texto deve ter no minimo 10 e no maxÃ­mo 100 caracteres.")	
 	private String texto;
 	
 	@UpdateTimestamp
