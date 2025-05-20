@@ -3,36 +3,47 @@ package com.generation.blogpessoal.model;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.generation.blogpessoal.repository.TemaRepository;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name = "tb_postagens") //CREATE TABLE tb_postagens();
+@Table(name = "tb_postagens") // CREATE TABLE tb_postagens();
 public class Postagem {
 
 	@Id // Primary key
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // UTO_INCREMENT
 	private Long id;
-	
+
 	@Column(length = 100)
-	@NotBlank(message = "O atributo titulo Ã© obrigatÃ³rio!")
-	@Size(min = 5, max = 100, message = "O atributo titulo deve ter no minimo 5 e no maxÃ­mo 100 caracteres.")
+	@NotBlank(message = "O atributo titulo é obrigatoriorio!")
+	@Size(min = 5, max = 100, message = "O atributo titulo deve ter no minimo 5 e no máximo 100 caracteres.")
+	@Pattern(regexp = "^[^0-9].*", message = "O texto não pode ser apenas numérico")
 	private String titulo;
 	
 	@Column(length = 1000)
-	@NotBlank(message = "O atributo texto Ã© obrigatÃ³rio!")
-	@Size(min = 10, max = 1000, message = "O atributo texto deve ter no minimo 10 e no maxÃ­mo 100 caracteres.")	
+	@NotBlank(message = "O atributo texto é obrigatorio!")
+	@Size(min = 10, max = 1000, message = "O atributo texto deve ter no minimo 10 e no minimo 100 caracteres.")
 	private String texto;
-	
+
 	@UpdateTimestamp
 	private LocalDateTime data;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Tema tema;
 
 	public Long getId() {
 		return id;
@@ -65,7 +76,14 @@ public class Postagem {
 	public void setData(LocalDateTime data) {
 		this.data = data;
 	}
-	
-	
+
+	public Tema getTema() {
+		return tema;
+	}
+
+	public void setTema(Tema tema) {
+		this.tema = tema;
+	}
+
 	
 }
