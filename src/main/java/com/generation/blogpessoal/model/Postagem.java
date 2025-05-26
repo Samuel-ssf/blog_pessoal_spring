@@ -3,10 +3,8 @@ package com.generation.blogpessoal.model;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.generation.blogpessoal.repository.TemaRepository;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -44,6 +42,10 @@ public class Postagem {
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Usuario usuario;
 
 	public Long getId() {
 		return id;
@@ -85,5 +87,12 @@ public class Postagem {
 		this.tema = tema;
 	}
 
-	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 }
