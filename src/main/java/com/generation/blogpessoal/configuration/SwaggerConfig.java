@@ -13,7 +13,6 @@ import io.swagger.v3.oas.models.info.License;
 public class SwaggerConfig {
 
 
-
 	    @Bean
 	    OpenAPI springBlogPessoalOpenAPI() {
 	        return new OpenAPI()
