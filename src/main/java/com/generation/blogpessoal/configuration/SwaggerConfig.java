@@ -33,6 +33,7 @@ public class SwaggerConfig {
 						.url("https://github.com/conteudoGeneration"));
 	}
 
+	@Bean
 	OpenApiCustomizer customerGlobalHeaderOpenApiCustomiser() {
 
 		return openApi -> {
