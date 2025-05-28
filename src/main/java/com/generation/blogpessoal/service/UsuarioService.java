@@ -20,7 +20,7 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 
-	@Autowired
+	@Autowired 
 	private JwtService jwtService;
 
 	@Autowired

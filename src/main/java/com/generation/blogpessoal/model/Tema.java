@@ -22,7 +22,7 @@ import jakarta.validation.constraints.Size;
 
 public class Tema {
 
-	@Id // Primary key
+	@Id // Primary key 
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // UTO_INCREMENT
 	private Long id;
 	

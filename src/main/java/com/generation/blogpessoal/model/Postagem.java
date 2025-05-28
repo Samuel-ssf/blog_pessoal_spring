@@ -20,7 +20,7 @@ import jakarta.validation.constraints.Size;
 @Entity
 @Table(name = "tb_postagens") // CREATE TABLE tb_postagens();
 public class Postagem {
-
+ 
 	@Id // Primary key
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // UTO_INCREMENT
 	private Long id;

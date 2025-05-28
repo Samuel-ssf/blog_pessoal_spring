@@ -27,7 +27,7 @@ import jakarta.validation.Valid;
 @RequestMapping("/tema")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class TemaController {
-
+ 
 	@Autowired
 	private TemaRepository temaRepository;
 
