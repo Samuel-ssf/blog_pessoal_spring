@@ -17,7 +17,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
-@Entity
+@Entity 
 @Table(name = "tb_postagens") // CREATE TABLE tb_postagens();
 public class Postagem {
  

@@ -18,7 +18,7 @@ import com.generation.blogpessoal.service.UsuarioService;
 
 import jakarta.validation.Valid;
 
-@RestController
+@RestController 
 @RequestMapping("/usuarios")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioController {
